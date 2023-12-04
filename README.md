@@ -16,7 +16,7 @@ Com o aumento significativo de grandes grupos comerciais, nos vemos cada vez mai
 
 ## Estrutura
 
-![Captura de Tela 2023-11-28 às 21 33 35](https://github.com/osikmelina/o-de-casa/assets/107154514/a91f02bd-7007-4be3-9009-586bc1a907e2)
+![Captura de Tela 2023-12-04 às 17 03 29](https://github.com/osikmelina/o-de-casa/assets/107154514/6d4f3a3a-790c-4f2d-a1d7-75edf02b5947)
 
 ## Implementações futuras
 
