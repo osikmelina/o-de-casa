@@ -2,12 +2,25 @@ const User = require('./User')
 
 class Trader extends User {
   #phone;
-  instagram;
-  offerType = [category];
+  #instagram;
+  static offers = [];
 
-  constructor(phone, instagram) {
+  constructor(id, name, email, password, cpf, city, neighborhood, zipcode, phone, instagram) {
+    super(id, name, email, password, cpf, city, neighborhood, zipcode),
     this.#phone = phone,
-    this.instagram = instagram
+    this.#instagram = instagram
+  }
+
+  verifyPhone(phone) {
+
+  }
+
+  addOffer(offer) {
+
+  }
+
+  removeOffer(offer) {
+    
   }
 
   get phone() {
@@ -18,11 +31,13 @@ class Trader extends User {
     this.#phone = newPhone;
   }
 
-  addOffer(category) {
-
+  get instagram() {
+    return this.#instagram;
   }
 
-  removeOffer(category) {
-    
+  set phone(newInstagram) {
+    this.#phone = newInstagram;
   }
 }
+
+module.exports = Trader
