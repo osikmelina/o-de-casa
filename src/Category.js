@@ -1,9 +1,9 @@
 class Category {
   name;
-  type;
 
-  constructor(name, type) {
-    this.name = name,
-    this.type = type
+  constructor(name) {
+    this.name = name
   }
 }
+
+module.exports = Category

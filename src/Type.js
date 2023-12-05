@@ -1,13 +1,9 @@
 class Type {
   name;
-  category;
 
-  constructor(name, category) {
-    this.name = name,
-    this.category = category
-  }
-
-  addCategory(category) {
-    
+  constructor(name) {
+    this.name = name
   }
 }
+
+module.exports = Type
