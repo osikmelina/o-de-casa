@@ -6,9 +6,9 @@ class User {
   #cpf;
   #city;
   #neighborhood;
-  #zipcode;
+  #cep;
 
-  constructor(id, name, email, password, cpf, city, neighborhood, zipcode) {
+  constructor(id, name, email, password, cpf, city, neighborhood, cep) {
     this.#id = id,
     this.#name = name,
     this.#email = email,
@@ -16,19 +16,27 @@ class User {
     this.#cpf = cpf,
     this.#city = city,
     this.#neighborhood = neighborhood,
-    this.#zipcode = zipcode
+    this.#cep = cep
   }
 
   verifyEmail() {
-
+    const regexEmail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/
+    return regexEmail.test(this.email)
   }
 
-  verifyPassword(password) {
-
+  verifyPassword() {
+    const regexPassword = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/
+    return regexPassword.test(this.password)
   }
 
-  verifyCpf(cpf) {
+  verifyCpf() {
+    const regexCpf = /([0-9]{2}[\.]?[0-9]{3}[\.]?[0-9]{3}[\/]?[0-9]{4}[-]?[0-9]{2})|([0-9]{3}[\.]?[0-9]{3}[\.]?[0-9]{3}[-]?[0-9]{2})/
+    return regexCpf.test(this.cpf)
+  }
 
+  verifyCep() {
+    const regexCep =  /^\d{2}\d{3}\d{3}$/
+    return regexCep.test(this.cep)
   }
 
   get id() {
@@ -51,24 +59,24 @@ class User {
     return this.#email;
   }
 
-  set name(newEmail) {
-    this.#name = newEmail;
+  set email(newEmail) {
+    this.#email = newEmail;
   }
 
   get password() {
     return this.#password;
   }
 
-  set name(newPassword) {
-    this.#name = newPassword;
+  set password(newPassword) {
+    this.#password = newPassword;
   }
 
   get cpf() {
     return this.#cpf;
   }
 
-  set name(newCpf) {
-    this.#name = newCpf;
+  set cpf(newCpf) {
+    this.#cpf = newCpf;
   }
 
   get city() {
@@ -87,12 +95,12 @@ class User {
     this.#neighborhood = newNeighborhood;
   }
 
-  get zipcode() {
-    return this.#zipcode;
+  get cep() {
+    return this.#cep;
   }
 
-  set name(newZipcode) {
-    this.#name = newZipcode;
+  set cep(newCep) {
+    this.#cep = newCep;
   }
 }
 
