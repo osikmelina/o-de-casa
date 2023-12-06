@@ -1,4 +1,5 @@
 const User = require('./User')
+const Offer = require('./Offer')
 
 class Trader extends User {
   #phone;
@@ -11,16 +12,21 @@ class Trader extends User {
     this.#instagram = instagram
   }
 
-  verifyPhone(phone) {
-
+  verifyPhone() {
+    const regexPhone = /^(?:(?:\+|00)?(55)\s?)?(?:\(?([1-9][0-9])\)?\s?)?(?:((?:9\d|[2-9])\d{3})\-?(\d{4}))$/
+    return regexPhone.test(this.phone)
   }
 
   addOffer(offer) {
-
+    if(offer instanceof Offer) {
+      Trader.offers.push(offer)
+      console.log(`${offer.name} foi adicionado`)
+    }
   }
 
-  removeOffer(offer) {
-    
+  removeOffer(item) {
+    this.offers = this.offers.filter((offer) => offer.item !== item)
+    // console.log(`${item} foi removido`)
   }
 
   get phone() {
