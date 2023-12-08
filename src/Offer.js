@@ -2,13 +2,13 @@ class Offer {
   #traderId;
   #type;
   #category;
-  item;
+  #item;
 
   constructor(traderId, type, category, item) {
     this.#traderId = traderId,
     this.#type = type,
     this.#category = category,
-    this.item = item
+    this.#item = item
   }
 
   getTraderId() {
@@ -36,11 +36,11 @@ class Offer {
   }
 
   getItem() {
-    return this.item;
+    return this.#item;
   }
 
   setItem(newItem) {
-    this.item = newItem;
+    this.#item = newItem;
   }
 }
 

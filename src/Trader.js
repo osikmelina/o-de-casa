@@ -1,5 +1,6 @@
 const User = require('./User')
 const Offer = require('./Offer')
+const allTraders = require('./index')
 
 class Trader extends User {
   #phone;
@@ -10,6 +11,7 @@ class Trader extends User {
     super(id, name, email, password, cpf, city, neighborhood, cep),
     this.#phone = phone,
     this.#instagram = instagram
+    allTraders.push(this)
   }
 
   verifyPhone() {
@@ -21,6 +23,8 @@ class Trader extends User {
     if(offer instanceof Offer) {
       this.offers.push(offer)
       console.log(`${offer.getItem()} foi adicionado`)
+    } else {
+      throw new Error('Não foi possível adicionar a oferta')
     }
   }
 
@@ -30,6 +34,8 @@ class Trader extends User {
     if(indexItem >= 0) {
       this.offers.splice(indexItem, 1)
       console.log(`${item} foi removido`)
+    } else {
+      throw new Error('Não foi possível remover a oferta')
     }
   }
 

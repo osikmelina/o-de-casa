@@ -3,7 +3,7 @@ const Offer = require('./Offer')
 
 describe('Trader class tests', () => {
 
-  const offer = new Offer(123, 'product', 'manufacturing', 'cerâmica')
+  const validOffer = new Offer(123, 'product', 'manufacturing', 'cerâmica')
 
   let validTrader
 
@@ -42,10 +42,18 @@ describe('Trader class tests', () => {
 
   it('should add and remove an offer from array list of offers', () => {
     expect(validTrader.offers.length).toBe(0)
-    validTrader.addOffer(offer)
+    validTrader.addOffer(validOffer)
     expect(validTrader.offers.length).toBe(1)
     validTrader.removeOffer('cerâmica')
     expect(validTrader.offers.length).toBe(0)
+  })
+
+  it('should return error message if adding an offer that is not instance of class Offer', () => {
+    expect(() => validTrader.addOffer(validTrader)).toThrow('Não foi possível adicionar a oferta')
+  })
+
+  it('should return error message if removing an invalid offer', () => {
+    expect(() => validTrader.removeOffer('vela')).toThrow('Não foi possível remover a oferta')
   })
 
   it('should get Trader phone', () => {

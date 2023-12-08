@@ -1,21 +1,31 @@
 const allTraders = require('./index')
+const Type = require('./Type')
+const Category = require('./Category')
 
 function filterByType(type) {
-  const filteredByType = allTraders.filter((offer) => typeFilter(offer, type))
-  return filteredByType
+    const filteredByType = allTraders.filter((offer) => typeFinder(offer, type))
+    return filteredByType
 }
 
-function typeFilter(offer, type) {
-  return offer.type === type
+function typeFinder(offer, type) {
+  if(type instanceof Type) {
+    return offer.type === type.name
+  } else {
+    throw new Error('Tipo inválido')
+  }
 }
 
 function filterByCategory(category) {
-  const filteredByCategory = allTraders.filter((offer) => categoryFilter(offer, category))
+  const filteredByCategory = allTraders.filter((offer) => categoryFinder(offer, category))
   return filteredByCategory
 }
 
-function categoryFilter(offer, category) {
-  return offer.category === category
+function categoryFinder(offer, category) {
+  if(category instanceof Category) {
+    return offer.category === category.name
+  } else {
+    throw new Error('Categoria inválida')
+  }
 }
 
 function filterByItem(item) {
@@ -29,6 +39,8 @@ function itemFilter(offer, item) {
 
 module.exports = {
   filterByType,
+  typeFinder,
   filterByCategory,
+  categoryFinder,
   filterByItem
 }
