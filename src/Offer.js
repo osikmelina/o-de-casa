@@ -2,45 +2,45 @@ class Offer {
   #traderId;
   #type;
   #category;
-  #name;
+  item;
 
-  constructor(traderId, type, category, name) {
+  constructor(traderId, type, category, item) {
     this.#traderId = traderId,
     this.#type = type,
-    this.#name = name,
-    this.#category = category
+    this.#category = category,
+    this.item = item
   }
 
-  get traderId() {
+  getTraderId() {
     return this.#traderId;
   }
 
-  set traderId(newTraderId) {
+  setTraderId(newTraderId) {
     this.#traderId = newTraderId;
   }
 
-  get type() {
+  getType() {
     return this.#type;
   }
 
-  set type(newType) {
+  setType(newType) {
     this.#type = newType;
   }
 
-  get category() {
+  getCategory() {
     return this.#category;
   }
 
-  set category(newCategory) {
+  setCategory(newCategory) {
     this.#category = newCategory;
   }
 
-  get name() {
-    return this.#name;
+  getItem() {
+    return this.item;
   }
 
-  set name(newName) {
-    this.#name = newName;
+  setItem(newItem) {
+    this.item = newItem;
   }
 }
 

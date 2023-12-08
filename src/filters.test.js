@@ -8,37 +8,37 @@ jest.mock('./index', () => [{
   traderId: 1234,
   type: 'product',
   category: 'food',
-  name: 'geléia'
+  item: 'geléia'
 },
 {
   traderId: 1235,
   type: 'product',
   category: 'cosmetic',
-  name: 'sabonete'
+  item: 'sabonete'
 },
 {
   traderId: 1236,
   type: 'product',
   category: 'decor',
-  name: 'vela'
+  item: 'vela'
 },
 {
   traderId: 1237,
   type: 'service',
   category: 'manufacturing',
-  name: 'móveis'
+  item: 'móveis'
 },
 {
   traderId: 1238,
   type: 'service',
   category: 'education',
-  name: 'aula de inglês'
+  item: 'aula de inglês'
 },
 {
   traderId: 1239,
   type: 'service',
   category: 'wellness',
-  name: 'wellness'
+  item: 'wellness'
 }])
 
 describe('User class tests', () => {
@@ -50,19 +50,19 @@ describe('User class tests', () => {
         traderId: 1234,
         type: 'product',
         category: 'food',
-        name: 'geléia'
+        item: 'geléia'
       },
       {
         traderId: 1235,
         type: 'product',
         category: 'cosmetic',
-        name: 'sabonete'
+        item: 'sabonete'
       },
       {
         traderId: 1236,
         type: 'product',
         category: 'decor',
-        name: 'vela'
+        item: 'vela'
       }
     ])
   })
@@ -74,7 +74,7 @@ describe('User class tests', () => {
         traderId: 1234,
         type: 'product',
         category: 'food',
-        name: 'geléia'
+        item: 'geléia'
       }
     ])
   })
@@ -86,7 +86,7 @@ describe('User class tests', () => {
         traderId: 1236,
         type: 'product',
         category: 'decor',
-        name: 'vela'
+        item: 'vela'
       }
     ])
   })

@@ -4,45 +4,49 @@ const Offer = require('./Offer')
 class Trader extends User {
   #phone;
   #instagram;
-  static offers = [];
+  offers = [];
 
-  constructor(id, name, email, password, cpf, city, neighborhood, zipcode, phone, instagram) {
-    super(id, name, email, password, cpf, city, neighborhood, zipcode),
+  constructor(id, name, email, password, cpf, city, neighborhood, cep, phone, instagram) {
+    super(id, name, email, password, cpf, city, neighborhood, cep),
     this.#phone = phone,
     this.#instagram = instagram
   }
 
   verifyPhone() {
     const regexPhone = /^(?:(?:\+|00)?(55)\s?)?(?:\(?([1-9][0-9])\)?\s?)?(?:((?:9\d|[2-9])\d{3})\-?(\d{4}))$/
-    return regexPhone.test(this.phone)
+    return regexPhone.test(this.getPhone())
   }
 
   addOffer(offer) {
     if(offer instanceof Offer) {
-      Trader.offers.push(offer)
-      console.log(`${offer.name} foi adicionado`)
+      this.offers.push(offer)
+      console.log(`${offer.getItem()} foi adicionado`)
     }
   }
 
   removeOffer(item) {
-    this.offers = this.offers.filter((offer) => offer.item !== item)
-    // console.log(`${item} foi removido`)
+     const arrayOfItems = this.offers.map((offer) => offer.getItem())
+     const indexItem = arrayOfItems.indexOf(item)
+    if(indexItem >= 0) {
+      this.offers.splice(indexItem, 1)
+      console.log(`${item} foi removido`)
+    }
   }
 
-  get phone() {
+  getPhone() {
     return this.#phone;
   }
 
-  set phone(newPhone) {
-    this.#phone = newPhone;
+  setPhone(newPhone) {
+    this.#phone = newPhone
   }
 
-  get instagram() {
-    return this.#instagram;
+  getInstagram() {
+    return this.#instagram
   }
 
-  set phone(newInstagram) {
-    this.#phone = newInstagram;
+  setInstagram(newInstagram) {
+    this.#instagram = newInstagram
   }
 }
 
