@@ -21,85 +21,85 @@ class User {
 
   verifyEmail() {
     const regexEmail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/
-    return regexEmail.test(this.email)
+    return regexEmail.test(this.getEmail())
   }
 
   verifyPassword() {
     const regexPassword = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/
-    return regexPassword.test(this.password)
+    return regexPassword.test(this.getPassword())
   }
 
   verifyCpf() {
     const regexCpf = /([0-9]{2}[\.]?[0-9]{3}[\.]?[0-9]{3}[\/]?[0-9]{4}[-]?[0-9]{2})|([0-9]{3}[\.]?[0-9]{3}[\.]?[0-9]{3}[-]?[0-9]{2})/
-    return regexCpf.test(this.cpf)
+    return regexCpf.test(this.getCpf())
   }
 
   verifyCep() {
     const regexCep =  /^\d{2}\d{3}\d{3}$/
-    return regexCep.test(this.cep)
+    return regexCep.test(this.getCep())
   }
 
-  get id() {
+  getId() {
     return this.#id;
   }
 
-  set id(newId) {
-    this.#name = newId;
+  setId(newId) {
+    this.#id = newId;
   }
 
-  get name() {
+  getName() {
     return this.#name;
   }
 
-  set name(newName) {
+  setName(newName) {
     this.#name = newName;
   }
 
-  get email() {
+  getEmail() {
     return this.#email;
   }
 
-  set email(newEmail) {
+  setEmail(newEmail) {
     this.#email = newEmail;
   }
 
-  get password() {
+  getPassword() {
     return this.#password;
   }
 
-  set password(newPassword) {
+  setPassword(newPassword) {
     this.#password = newPassword;
   }
 
-  get cpf() {
+  getCpf() {
     return this.#cpf;
   }
 
-  set cpf(newCpf) {
+  setCpf(newCpf) {
     this.#cpf = newCpf;
   }
 
-  get city() {
+  getCity() {
     return this.#city;
   }
 
-  set city(newCity) {
+  setCity(newCity) {
     this.#city = newCity;
   }
 
-  get neighborhood() {
+  getNeighborhood() {
     return this.#neighborhood;
   }
 
-  set neighborhood(newNeighborhood) {
+  setNeighborhood(newNeighborhood) {
     this.#neighborhood = newNeighborhood;
   }
 
-  get cep() {
+  getCep() {
     return this.#cep;
   }
 
-  set cep(newCep) {
+  setCep(newCep) {
     this.#cep = newCep;
   }
 }

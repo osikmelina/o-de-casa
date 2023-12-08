@@ -3,8 +3,14 @@ const Offer = require('./Offer')
 
 describe('Trader class tests', () => {
 
+  const offer = new Offer(123, 'product', 'manufacturing', 'cerâmica')
+
+  let validTrader
+
   beforeEach(() => {
     validTrader = new Trader(123, 'Melina', 'melina@email.com', '1@3b4C5d', '12234567809', 'Curitiba', 'Vila Izabel', '80620000', '991990030', '@melina')
+
+    invalidTrader = new Trader(123, 'Melina', 'melina@email', 123456, '12234567', 'Curitiba', 'Vila Izabel', '806200', '9919900', 'melina')
   })
 
   it('should verify if instance Trader is being created correctly', () => {
@@ -12,16 +18,16 @@ describe('Trader class tests', () => {
   })
 
   it('should instance Trader with valid data', () => {
-    expect(validTrader.id).toBe(123)
-    expect(validTrader.name).toBe('Melina')
-    expect(validTrader.email).toBe('melina@email.com')
-    expect(validTrader.password).toBe('1@3b4C5d')
-    expect(validTrader.cpf).toBe('12234567809')
-    expect(validTrader.city).toBe('Curitiba')
-    expect(validTrader.neighborhood).toBe('Vila Izabel')
-    expect(validTrader.cep).toBe('80620000')
-    expect(validTrader.phone).toBe('991990030')
-    expect(validTrader.instagram).toBe('@melina')
+    expect(validTrader.getId()).toBe(123)
+    expect(validTrader.getName()).toBe('Melina')
+    expect(validTrader.getEmail()).toBe('melina@email.com')
+    expect(validTrader.getPassword()).toBe('1@3b4C5d')
+    expect(validTrader.getCpf()).toBe('12234567809')
+    expect(validTrader.getCity()).toBe('Curitiba')
+    expect(validTrader.getNeighborhood()).toBe('Vila Izabel')
+    expect(validTrader.getCep()).toBe('80620000')
+    expect(validTrader.getPhone()).toBe('991990030')
+    expect(validTrader.getInstagram()).toBe('@melina')
   })
 
   it('should return true if phone is valid', () => {
@@ -30,18 +36,35 @@ describe('Trader class tests', () => {
   })
 
   it('should return false if phone is invalid', () => {
-    const verifiedPhone = validTrader.verifyPhone()
+    const verifiedPhone = invalidTrader.verifyPhone()
     expect(verifiedPhone).toBeFalsy()
   })
 
-  it('should add an offer to array list of offers', () => {
-    const offer = new Offer(123, 'product', 'manufacturing', 'cerâmica')
+  it('should add and remove an offer from array list of offers', () => {
+    expect(validTrader.offers.length).toBe(0)
     validTrader.addOffer(offer)
-    expect(validTrader.offers).toContain('cerâmica')
+    expect(validTrader.offers.length).toBe(1)
+    validTrader.removeOffer('cerâmica')
+    expect(validTrader.offers.length).toBe(0)
   })
 
-  it('should remove an offer from array list of offers', () => {
-    validTrader.removeOffer('cerâmica')
-    expect(validTrader.offers).not.arrayContaining('cerâmica')
+  it('should get Trader phone', () => {
+    const result = validTrader.getPhone()
+    expect(result).toEqual('991990030')
+  })
+
+  it('should set new Trader phone', () => {
+    validTrader.setPhone('981991151')
+    expect(validTrader.getPhone()).toEqual('981991151')
+  })
+
+  it('should get Trader instagram', () => {
+    const result = validTrader.getInstagram()
+    expect(result).toEqual('@melina')
+  })
+
+  it('should set new Trader instagram', () => {
+    validTrader.setInstagram('@maria')
+    expect(validTrader.getInstagram()).toEqual('@maria')
   })
 })
