@@ -9,6 +9,7 @@ Com o aumento significativo de grandes grupos comerciais, nos vemos cada vez mai
 
 ## Funcionalidades
 
+- Cadastro de ofertadores de produtos/serviços
 - Filtros por cidade -> bairro
 - Seleção entre produtos ou serviços
 - Escolha de categorias disponíveis
@@ -16,14 +17,19 @@ Com o aumento significativo de grandes grupos comerciais, nos vemos cada vez mai
 
 ## Estrutura
 
-![Captura de Tela 2023-12-04 às 17 03 29](https://github.com/osikmelina/o-de-casa/assets/107154514/6d4f3a3a-790c-4f2d-a1d7-75edf02b5947)
+![Captura de Tela 2023-12-08 às 18 34 30](https://github.com/osikmelina/o-de-casa/assets/107154514/0ee9b5c5-4442-40a1-97ab-10e25bf80c7e)
+
+## Testes
+
+<img width="528" alt="Captura de Tela 2023-12-08 às 18 40 27" src="https://github.com/osikmelina/o-de-casa/assets/107154514/6757ecc5-30b4-4149-99bc-6d5b09249ee9">
 
 ## Implementações futuras
 
-- Cadastro de usuários de busca
 - Disponibilidade de outras cidades
 - Opção para visualização dos resultados no mapa
-- Imagem de perfil comercial para os ofertadores de produtos/serviços
-- Encaminhar o contato diretamente para o whatsapp
-- Mostrar prévia do perfil no Instagram, apresentando as últimas fotos
+- Cadastro de usuários compradores
 - Lista de favoritos
+- Encaminhar contato diretamente para o whatsapp
+- Imagem de perfil comercial para os ofertadores
+- Prévia com as últimas fotos do Instagram dos ofertadores
+- Opção para oferta com pagamento por material
