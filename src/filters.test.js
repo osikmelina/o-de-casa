@@ -10,7 +10,7 @@ const Type = require('./Type')
 const Category = require('./Category')
 const Offer = require('./Offer')
 
-jest.mock('./index', () => [{
+jest.mock('./storage', () => [{
   traderId: 1234,
   type: 'product',
   category: 'food',

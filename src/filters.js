@@ -1,4 +1,4 @@
-const allTraders = require('./index')
+const allTraders = require('./storage')
 const Type = require('./Type')
 const Category = require('./Category')
 
